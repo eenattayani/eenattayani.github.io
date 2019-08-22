@@ -16,10 +16,8 @@
 
   <Placemark>
 	<description>Area 1</description>
+	<styleUrl>#yellowLine</styleUrl>
 	<Style>
-		<LineStyle>
-			<color>ffffffff</color>
-		</LineStyle>
 		<PolyStyle><fill>0</fill></PolyStyle>
 	</Style>
 	<ExtendedData><SchemaData schemaUrl="#Area_Features">
@@ -29,7 +27,8 @@
   </Placemark>
   <Placemark>
 	<description>Area 2</description>
-	<Style><LineStyle><color>ffffffff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<styleUrl>#yellowLine</styleUrl>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#Area_Features">
 		<SimpleData name="extrude">0</SimpleData>
 	</SchemaData></ExtendedData>
@@ -37,7 +36,8 @@
   </Placemark>
   <Placemark>
 	<description>Area 3</description>
-	<Style><LineStyle><color>ffffffff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<styleUrl>#yellowLine</styleUrl>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#Area_Features">
 		<SimpleData name="extrude">0</SimpleData>
 	</SchemaData></ExtendedData>
@@ -45,6 +45,7 @@
   </Placemark>
   <Placemark>
 	<description>Area 4</description>
+	<styleUrl>#yellowLine</styleUrl>
 	<Style><LineStyle><color>ffffffff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#Area_Features">
 		<SimpleData name="altitudeMode">relativeToGround</SimpleData>
@@ -448,16 +449,19 @@
   </Placemark>
   <Placemark>
 	<description>Area Line Tertentu</description>
-	<Style><LineStyle><color>ffffffff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<styleUrl>#yellowLine</styleUrl>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
       <LineString><coordinates>109.2950961154,-0.0951960494 109.2971725065,-0.0977321862 109.2972153368,-0.0978892306 109.2972867206,-0.0980034448 109.3011807635,-0.1017975832 109.3031964603,-0.1035927022</coordinates></LineString>
   </Placemark>
   <Placemark>
 	<description>Area Line Tertentu</description>
+	<styleUrl>#yellowLine</styleUrl>
 	<Style><LineStyle><color>ffffffff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
       <LineString><coordinates>109.3004911861,-0.1425614581 109.2991998325,-0.1443853448 109.2992379039,-0.1447565407 109.2992664574,-0.1474405728 109.2994377786,-0.1532559755 109.2995234392,-0.1542363134 109.2996662068,-0.1552927941</coordinates></LineString>
   </Placemark>
   <Placemark>
 	<description>Area Line Tertentu</description>
+	<styleUrl>#yellowLine</styleUrl>
 	<Style><LineStyle><color>ffffffff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
       <LineString><coordinates>109.3046154322,-0.1431903319 109.3047828412,-0.142890964 109.3052944253,-0.1423317907 109.3070076372,-0.1402735569 109.3079713189,-0.1391552102 109.3085066976,-0.1386079342 109.310434061,-0.1363593435 109.3136463334,-0.1326116925 109.3143839663,-0.1317669838 109.3175367521,-0.1279479489 109.3181673093,-0.127329289 109.323223664,-0.1212616635 109.324044578,-0.1202384952 109.3254841519,-0.118513386 109.3273401315,-0.1162766926 109.3299813332,-0.1132428799 109.3305999931,-0.1125409389 109.3332174002,-0.1094714342 109.3357158342,-0.1065327998 109.3378076994,-0.1040741153</coordinates></LineString>
   </Placemark>
