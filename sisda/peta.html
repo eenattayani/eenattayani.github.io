@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link rel="icon" type="image/png" href="img/logo-pu.jpg">
+    <title>Map Sistem Informasi Geografis SDA Kalbar</title>
+    <link rel="stylesheet" type="text/css" href="css/tema.css">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="js/peta.js"></script>
+    <style></style>
+  </head>
+  <body>
+		<div id="map"></div>
+		
+		<div class="top cf">
+			<div class="logo"><img src="img/top.png"></div>
+			<div class="top-1">
+				<div id="tanggal">1 Januari 2019</div>
+				<div id="jam">00 : 00 : 00</div>
+			</div>
+			<div class="top-2">
+				<div class="instansi">SIG SDA KALBAR</div>
+				<div class="link">
+					<ul>
+						<li><a href="index.html">Beranda</a></li>
+						<li><a href="peta.php">Map SIGSDA</a></li>
+						<li><a href="#">Layanan</a></li>
+						<li><a href="#">Tentang</a></li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+
+		<div id="capture">info polygon</div>
+
+		<!-- <div id="legend"><h3>Legenda</h3></div> -->
+
+	
+	
+
+	<script type="text/javascript">
+	var map;
+	var src = 'https://raw.githubusercontent.com/eenattayani/eenattayani.github.io/master/kml/punggur_m.kml';
+	var icon = 'img/firefox.ico';
+	
+     function initMap() {
+     	var centerMap = {lat: -0.1256921, lng: 109.2458323};
+
+     	var kmlLayer;
+
+     	var markerSumur;
+     	var markerSimpang;
+     	var markerTempatIbadah;
+     	var markerPintuAir;
+
+		var posisiSumur = {lat: -0.1256921, lng: 109.2458323};
+		var posisiSimpang = {lat: -0.1256921, lng: 109.2728323};
+		var posisiPintuAir = {lat: -0.1056921, lng: 109.2928323};
+
+		var infoSumur;
+		var infoSimpang;
+		var infoPintuAir;
+
+		var contentSumur;
+		var contentSimpang;
+		var contentPintuAir;
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: centerMap,
+          zoom: 14,
+		  mapTypeControlOptions: {
+            mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain']
+          }
+        });
+
+// marker
+
+        markerSumur = new google.maps.Marker({
+		    position: posisiSumur,
+		    map: map,
+		    title: 'Sumur'
+	  	});
+
+	  	markerPintuAir = new google.maps.Marker({
+	  		position: posisiPintuAir,
+	  		map: map,
+	  		title: 'Pintu Air'
+	  	});
+
+	  	markerSimpang = new google.maps.Marker({
+	  		position: posisiSimpang,
+	  		title: 'Persimpangan'
+	  	});
+
+	  	markerSimpang.setMap(map);
+
+// KML
+
+        kmlLayer = new google.maps.KmlLayer(src, {
+          suppressInfoWindows: true,
+          preserveViewport: false,
+          map: map
+        });
+
+        kmlLayer.addListener('click', function(event) {
+          var content = event.featureData.infoWindowHtml;
+          var testimonial = document.getElementById('capture');
+          testimonial.innerHTML = content;
+        });
+
+// info
+		contentSimpang = '<div id="content">'+
+		      '<div id="siteNotice">'+
+		      '</div>'+
+		      '<h1 id="firstHeading" class="firstHeading">PUNGGUR</h1>'+
+		      '<div id="bodyContent">'+
+		      '<p><b>Punggur Kecil</b>, suatu desa di <b>Kubu Raya</b>. ' +
+		      'Pada tahun 2010 jumlah penduduknya 11.869 jiwa.</p>'+
+		      '<p>Attribution: Uluru, <a href="https://https://id.wikipedia.org/wiki/Punggur_Kecil,_Sungai_Kakap,_Kubu_Raya">'+
+		      'https://id.wikipedia.org/wiki</a> '+
+		      '(last visited 23 Agustus 2019).</p>'+
+		      '<p><img src="img/peta.jpg"/></p>'+
+		      '</div>'+
+		      '</div>';
+
+		  infoSimpang = new google.maps.InfoWindow({
+		    content: contentSimpang,
+		    maxWidth: 300
+		  });
+
+		  markerSimpang.addListener('click', function() {
+		  	close();
+		    infoSimpang.open(map, markerSimpang);
+		  });
+
+
+		  contentPintuAir = '<div id="content">'+
+		      '<div id="siteNotice">'+
+		    	'<table border="1" cellpadding="10" cellspacing="0">'+
+					'<tr class="oren">'+
+						'<th colspan="2">Pintu Air</th>'+
+						'<th>Gambar</th>'+
+					'</tr>'+
+					'<tr>'+
+						'<td>FID</td>'+
+						'<td>1</td>'+
+						'<td rowspan="4"><img src="img/pintu-air.jpg"/></td>'+
+					'</tr>'+
+					'<tr class="grey">'+
+						'<td>Jenis</td>'+
+						'<td>Pintu Air Daun</td>'+
+					'</tr>'+
+					'<tr>'+
+						'<td>X</td>'+
+						'<td>-0.1056921</td>'+
+					'</tr>'+
+					'<tr class="grey">'+
+						'<td>Y</td>'+
+						'<td>109.2928323</td>'+
+					'</tr>'+
+				'</table>'+
+		      '</div>'+
+		   '</div>';
+
+		  infoPintuAir = new google.maps.InfoWindow({
+		    content: contentPintuAir,
+		    maxWidth: 500
+		  });
+
+		  markerPintuAir.addListener('click', function() {
+		  	close();
+		    infoPintuAir.open(map, markerPintuAir);
+		  });
+
+
+		  contentSumur = '<div id="content">'+
+		      '<div id="siteNotice">'+
+		    	'<table border="1" cellpadding="10" cellspacing="0">'+
+					'<tr class="oren">'+
+						'<th colspan="2">Pintu Air</th>'+
+						'<th>Gambar</th>'+
+					'</tr>'+
+					'<tr>'+
+						'<td>FID</td>'+
+						'<td>1</td>'+
+						'<td rowspan="4"><img src="img/pintu-air.jpg"/></td>'+
+					'</tr>'+
+					'<tr class="grey">'+
+						'<td>Jenis</td>'+
+						'<td>Pintu Air Daun</td>'+
+					'</tr>'+
+					'<tr>'+
+						'<td>X</td>'+
+						'<td>-0.1056921</td>'+
+					'</tr>'+
+					'<tr class="grey">'+
+						'<td>Y</td>'+
+						'<td>109.2928323</td>'+
+					'</tr>'+
+				'</table>'+
+		      '</div>'+
+		   '</div>';
+
+		  infoSumur = new google.maps.InfoWindow({
+		    content: contentSumur
+		  });
+
+		  markerSumur.addListener('click', function() {
+		  	close();
+		    infoSumur.open(map, markerSumur);
+		  });
+
+
+
+
+        function close(){
+			infoSimpang.close();
+			infoSumur.close();
+			infoPintuAir.close();
+		}
+      }
+	</script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxKsJT64Ow8rgQljT7rLZpx-RAG-sB4vU&callback=initMap"
+    async defer></script>
+    <script type="text/javascript">
+    	var myVar=setInterval(function(){myTimer()},1000);
+		var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+
+		function myTimer(){
+			var hariIni = new Date();
+			var j = hariIni.getHours();
+			var m = hariIni.getMinutes();
+			var d = hariIni.getSeconds();
+			var h = hariIni.getDate();
+			var b = hariIni.getMonth();
+			var t = hariIni.getFullYear();
+			if(j < 10){j = "0" + j;}
+			if(m < 10){m = "0" + m;}
+			if(d < 10){d = "0" + d;}
+			document.getElementById("jam").innerHTML = j + " : " + m + " : " + d ;
+			document.getElementById("tanggal").innerHTML =   h + " " + months[b] + " " + t ;	
+		}
+    </script>
+  </body>
+</html>
