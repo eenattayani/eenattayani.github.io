@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Folder><name>Line_Features</name>
+  <Placemark>
+	<description>Unknown Line Type</description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>108.990871,0.31384 108.9924232516,0.3134958089 108.9934886806,0.3133252872 108.9941433144,0.3132806653 108.9951117002,0.3131542225 108.9960248269,0.3130233729 108.9969898318,0.3128685721 108.9979530197,0.3126850196 108.9987183787,0.3125239558 108.9997341765,0.3123134436 109.0008077274,0.3121019581 109.0019916754,0.3119052534 109.0028036568,0.3117312991 109.0036626135,0.3115711825 109.0044144541,0.3113525826 109.0046987683,0.3113074042 109.0056735836,0.3110214975 109.0062125199,0.3109146176 109.0068781231,0.3108705816 109.0076251727,0.3108734729 109.0084123271,0.3108975875 109.0091445297,0.3109164722 109.0094196524,0.3109185052 109.0096729301,0.3109084633 109.010091,0.310822 109.0105803118,0.3106978295 109.0111550968,0.3105865605 109.0118498712,0.3100280526 109.0121104661,0.3098095581 109.0124877356,0.3094378207 109.0129075138,0.3091135768 109.0129241813,0.3091038018</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<description>Unknown Line Type</description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>109.013022,0.309278 109.0123918687,0.309767887 109.0121485425,0.3099868472 109.0119240811,0.3101888028 109.0115923329,0.3104852706 109.011333799,0.3107038233 109.0111549292,0.3108697012 109.0109252563,0.3111089298 109.0107764756,0.3112607039 109.0106489975,0.3113601264 109.010596,0.311376</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<description>Unknown Line Type</description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>109.0111549292,0.3108697012 109.0110952888,0.3107633909 109.0110425279,0.3106515203 109.0110282825,0.3106111097</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<description>Unknown Line Type</description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>109.0091759618,0.3109162208 109.009168,0.310946 109.0092783049,0.3114641458 109.0094145946,0.3120106459 109.0094521455,0.3120310977 109.0098304208,0.3119046148 109.0100977274,0.3117577016 109.0104053728,0.3115312506 109.010596,0.311376</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<description>Unknown Line Type</description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>109.0104295967,0.3107360758 109.0105818531,0.3112188741 109.010596,0.311376 109.010707352,0.3116906337 109.0107200158,0.3117550237 109.0107442446,0.3119060221 109.0107918763,0.3122028711 109.0108347844,0.3124702817 109.0109262087,0.3128709815 109.0109921464,0.313039537 109.0110758962,0.3133415251 109.0112353587,0.3138172406 109.0113717088,0.3141504133 109.0115377801,0.3145945975 109.0117956399,0.3151408244 109.0119395591,0.3154512495 109.0121679782,0.3160202429 109.0123870469,0.3165305409 109.0124982254,0.316840842 109.01265268,0.3173457519 109.0128153104,0.3179215302 109.0129283824,0.3183258483 109.0130938553,0.3188296077 109.0135390825,0.3197468284 109.0136406664,0.3201436065 109.0137824882,0.3212868143 109.0150420203,0.325202028 109.015632458,0.3271216247 109.0158616193,0.3280577995 109.0162604506,0.3303326434 109.0165869053,0.3317278996 109.0169777535,0.333272852 109.0171684418,0.3351414297 109.017704716,0.3367981128 109.018362625,0.3390738844 109.0186918527,0.3400425799 109.0192987429,0.3415591193 109.0194619432,0.3423161387 109.019743,0.344014 109.0205550659,0.3463225532 109.0215822499,0.3485568155 109.0219185299,0.3492461201 109.0235231817,0.3524650633 109.023929,0.3534 109.024277,0.353425</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<description>Unknown Line Type</description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>109.0202593524,0.3456248436 109.0217363276,0.3451467399</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<description>Unknown Line Type</description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>109.020018,0.344925 109.022478,0.344226</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<description>Unknown Line Type</description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>109.0217363276,0.3451467399 109.0215254837,0.344496654</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<description>Unknown Line Type</description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>109.016484,0.3437 109.01787512,0.3429277148 109.0181005932,0.3428228572 109.018291533,0.3429308161 109.0183397289,0.3430152219 109.0188055069,0.3428148492 109.019307,0.342434 109.0194784105,0.3423948772</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<description>Unknown Line Type</description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>109.017177,0.335158 109.0176581964,0.3350042179 109.020047,0.334105 109.024673,0.332298 109.0260496549,0.3319987189 109.026485011,0.3318184242 109.0248915274,0.3273041826 109.0244000964,0.327187255 109.0243180376,0.3270987421 109.02357,0.327019</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<description>Unknown Line Type</description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>109.016023715,0.327946947 109.0117646199,0.3294364969 109.003097534,0.330316573 108.9970289214,0.331101941 108.993309021,0.331583351</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<description>Unknown Line Type</description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>109.002197,0.311666 109.0038011502,0.3156278562 109.005425,0.320908</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<description>Unknown Line Type</description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>109.007453,0.304301 109.0079412237,0.3058574069 109.0085183773,0.3077311844 109.009201,0.310867 109.0091968328,0.310910102</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<description>Unknown Line Type</description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>109.007735,0.3033 109.0079024993,0.3037984762 109.0082392003,0.304909246 109.0085236361,0.3058681326 109.0090092546,0.3075173935 109.0092413453,0.3083032921 109.0095145069,0.309079662 109.010063851,0.3102111746 109.010282,0.310674 109.0103837941,0.310759563</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<description>Unknown Line Type</description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>109.012845,0.318462 109.008969,0.320091 109.005425,0.320908 109.001365167,0.3213850829 108.997008,0.322487 108.991683287,0.323007998</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>
