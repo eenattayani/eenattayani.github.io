@@ -1,0 +1,300 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body, html {
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	font-family: arial;
+	color: white;
+	text-align: center;
+}
+
+main {
+	bottom: 0;
+	width: 100%;
+	margin-top: 17px;
+	grid-area: main;
+	background-color: unset;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+#mapid {
+	width: 100%;
+	height: 100%;
+	margin-top: 0px;
+	position: relative;
+	z-index: 0;
+}
+
+main .option {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 1;
+}
+
+main .option label {
+	font-size: 16px;
+	color: #333;
+	font-weight: 600;
+}
+
+main .option select {
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+	font-size: 16px;
+	padding: 2px 4px;
+} 
+
+main .legenda {
+	position: absolute;
+	background-color: rgba(0,0,0,0.3);
+	bottom: 10px;
+	left: 10px;
+	z-index: 1;
+	padding: 10px 12px;
+	border-radius: 6px;
+	text-align: left;
+	min-width: 100px;
+}
+
+main .legenda img {
+	height: 30px;
+}
+
+main .legenda ul {
+	list-style-type: none;
+	padding-left: 0px;
+	font-size: 13px;
+	margin: auto;
+}
+
+main .legenda ul li {
+	padding-bottom: 4px;
+	position: relative;
+}
+
+main .legenda ul li label {
+	bottom: 10px;
+	position: relative;
+}
+
+main .info-peta {
+	position: absolute;
+	top: 10px;
+	left: 50px;
+	z-index: 1;
+	color: #333;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+}
+
+.container {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+	box-sizing: border-box;
+	padding: 0px;
+	display: grid;
+	grid-template-areas: "header header "
+							"main aside";
+	grid-template-columns: auto 250px;
+	grid-template-rows: 150px auto;
+	grid-gap: 0px;			
+}
+
+.container header {
+	grid-area: header;
+	background-color: #0093dd;
+	display: inline;
+	vertical-align: center;
+	border: none;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+.container header img {
+	width: 35%;
+	padding: 8px 25px;
+	margin: auto;
+	position: relative;
+	float: left;
+}
+
+nav {
+     background-color: #333;
+     width: 100%;
+     display: flex;
+     justify-content: space-around;
+}
+
+nav a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	margin-left: 20px;
+}
+
+nav .nav1 {
+	flex: 3;
+	order: 1;
+}
+
+nav .nav2 {
+	order: 2;
+	flex: 1;
+	margin: auto;
+}
+
+.nav2 input{
+	color: #ccc;
+	border-radius: 4px;
+	padding: 7px 40px 7px 5px;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.nav2 button {
+	padding: 0px 0px 0px 0px;
+	width: 30px;
+	height: 30px;
+	color: white;
+	border: none;
+	outline: none;
+	background-color: inherit;
+	border-radius: 100%;
+}
+
+.nav2 button:hover {
+	background-color: #666;
+}
+
+.container header marquee {
+	background-color: #75cff0;/* #fff500;*/
+	width: 100%;
+	position: relative;
+	padding-bottom: 6px;
+}
+
+.container header marquee a {
+	color: #333;
+	text-decoration-line: none;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbtn {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+
+nav a:hover, .dropdown:hover .dropbtn {
+	background-color: #0093dd;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 18px 0px rgba(0,0,0,0.2);
+	z-index: 2;
+}
+
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+
+.container header span:hover {
+	animation-play-paused;
+}
+
+@keyframes runningText {
+	from {left: -500px;}
+	to {left: 1000px;}
+}
+
+
+aside {
+	grid-area: aside;
+	background-color: #333;
+	padding: 10px 1px;
+	display: block;
+}
+
+aside iframe {
+	width: 100%;
+	border: none;
+	border-radius: 6px;
+	padding-top: 0px;
+	margin-top: 0px;
+}
+
+aside a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+footer {
+	grid-area: footer;
+	background-color: #0093dd;
+	color: #333;
+	padding: 10px 0px;
+}
+
+
