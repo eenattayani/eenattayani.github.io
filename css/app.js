@@ -1,22 +1,33 @@
-var mymap = L.map('mapid').setView([0.37, -250.85], 11);
+var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+				'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+			mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWVuYXR0YXlhbmkiLCJhIjoiY2s4bDQ2MmVnMDA2bTNkcXo4NjJvcTloOSJ9.GjPT1P7ZJ--pzDo9IlOMow';
+
+		var satellite = L.tileLayer(mbUrl, {id: 'mapbox/satellite-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr}),
+		    streets   = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr}),
+		    grayscale = L.tileLayer(mbUrl, {id: 'mapbox/streets-v8', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+
+// var mymap = L.map('mapid').setView([0.35, 109.1], 10);
+
+var tinggi = 30, lebar = 14;
 
 var panen = L.icon({
 		iconUrl: 'img/panen.png',
-		iconSize: [20, 40], 
+		iconSize: [lebar, tinggi], 
 		iconAnchor: [22, 14],
 		popupAnchor: [-13, -20]
 });
 
 var standingCrop = L.icon({
 		iconUrl: 'img/standing-crop.png',
-		iconSize: [20, 40], 
+		iconSize: [lebar, tinggi], 
 		iconAnchor: [22, 14],
 		popupAnchor: [-13, -20]
 });
 
 var semai = L.icon({
 		iconUrl: 'img/semai.png',
-		iconSize: [20, 40], 
+		iconSize: [lebar, tinggi], 
 		iconAnchor: [22, 14],
 		popupAnchor: [-13, -20]
 });
@@ -27,47 +38,140 @@ var semai = L.icon({
 	semai = new statusTanaman({iconUrl: 'img/semai.png'}),
 	standingCrop = new statusTanaman({iconUrl: 'img/standing-crop.png'});
 */
-		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+
+// token = pk.eyJ1IjoiZWVuYXR0YXlhbmkiLCJhIjoiY2s4bDQ2MmVnMDA2bTNkcXo4NjJvcTloOSJ9.GjPT1P7ZJ--pzDo9IlOMow
+
+/*		L.tileLayer(mbUrl, {
 			maxZoom: 18,
-			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-				'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-				'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+			attribution: mbAttr,
 			id: 'mapbox/streets-v11',
 			tileSize: 512,
 			zoomOffset: -1
 		}).addTo(mymap);
+*/
+		var myStyle = {
+		    "color": "#75cf7c",
+		    "weight": 2,
+		    "opacity": 0.65
+		};
 
-		var geojsonLayer = new L.GeoJSON.AJAX("geojson.json");
+		
+
+
+	/*	var geojsonLayer = new L.GeoJSON.AJAX("mempawah.geojson");       
 		geojsonLayer.addTo(mymap);
+*/
+//		L.marker([0.358194, 108.961521]).addTo(mymap).bindPopup("MEMPAWAH");
+		var ketSc = "<br> Status: STANDING CROP",
+			ketPratanam = "<br> Status: PRA TANAM",
+			ketSemai = "<br> Status: SEMAI",
+			ketPanen = "<br> Status: SIAP PANEN";
+		
 
-		L.marker([0.35, -251.03]).addTo(mymap).bindPopup("MEMPAWAH");
+		var pratanamJagung = [
+			L.marker([0.582265, 109.121017], {icon: semai}).bindPopup("Tanaman: Jagung 1" + ketPratanam), 
+			L.marker([0.564413, 109.202728], {icon: semai}).bindPopup("Tanaman: Jagung 2" + ketPratanam),
+			L.marker([0.480646, 109.255257], {icon: semai}).bindPopup("Tanaman: Jagung 3" + ketPratanam)
+		];
 
-		L.marker([0.527336, -251.066437], {icon: semai}).addTo(mymap).bindPopup("semai");
-		L.marker([0.407864, -251.029358], {icon: semai}).addTo(mymap).bindPopup("semai");
-		L.marker([0.404431, -251.015625], {icon: semai}).addTo(mymap).bindPopup("semai");
-		L.marker([0.215606, -250.844307], {icon: panen}).addTo(mymap).bindPopup("panen");
-		L.marker([0.209083, -250.834351], {icon: panen}).addTo(mymap).bindPopup("panen");
-		L.marker([0.215606, -250.769806], {icon: panen}).addTo(mymap).bindPopup("panen");
-		L.marker([0.199127, -250.74646], {icon: panen}).addTo(mymap).bindPopup("panen");
-		L.marker([0.424343, -250.75676], {icon: panen}).addTo(mymap).bindPopup("panen");
-		L.marker([0.435329, -250.72998], {icon: panen}).addTo(mymap).bindPopup("panen");
-		L.marker([0.499872, -250.848083], {icon: standingCrop}).addTo(mymap).bindPopup("Standing crop");
-		L.marker([0.483393, -250.832291], {icon: standingCrop}).addTo(mymap).bindPopup("Standing crop");
-		L.marker([0.380056, -250.832977], {icon: standingCrop}).addTo(mymap).bindPopup("Standing crop");
-		L.marker([0.382802, -250.818901], {icon: standingCrop}).addTo(mymap).bindPopup("Standing crop");
+		var scJagung = [
+				L.marker([0.368726, 109.001541], {icon: standingCrop}).bindPopup("Tanaman: Jagung 4" + ketSc),
+				L.marker([0.362718, 109.008579], {icon: standingCrop}).bindPopup("Tanaman: Jagung 5" + ketSc),
+				L.marker([0.36495, 109.047203], {icon: standingCrop}).bindPopup("Tanaman: Jagung 6" + ketSc),
+				L.marker([0.368383, 109.082909], {icon: standingCrop}).bindPopup("Tanaman: Jagung 7" + ketSc)
+		];
 
-	/*	L.circle([0.35, -251.036], 500, {
-			color: 'red',
-			fillColor: '#f03',
-			fillOpacity: 0.5
-		}).addTo(mymap).bindPopup("I am a circle.");
+		var panenJagung = [
+			L.marker([0.34744, 109.022827], {icon: panen}).bindPopup("Tanaman: Jagung 8" + ketPanen),
+			L.marker([0.333708, 109.043083], {icon: panen}).bindPopup("Tanaman: Jagung 9" + ketPanen),
+			L.marker([0.327185, 109.126511], {icon: panen}).bindPopup("Tanaman: Jagung 10" + ketPanen),
+			L.marker([0.353277, 109.143677], {icon: panen}).bindPopup("Tanaman: Jagung 11" + ketPanen),
+			L.marker([0.244788, 109.269333], {icon: panen}).bindPopup("Tanaman: Jagung 12" + ketPanen),
+			L.marker([0.247535, 109.316025], {icon: panen}).bindPopup("Tanaman: Jagung 13" + ketPanen)
+		];
 
-		L.polygon([
-			[0.353, -251.028],
-			[0.358, -251.018],
-			[0.348, -251.01]
-		]).addTo(mymap).bindPopup("I am a polygon.");
+
 	
+		var semaiPadi = [
+			L.marker([0.535427, 108.942233], {icon: semai}).bindPopup("semai satu"), 
+			L.marker([0.401943, 108.975573], {icon: semai}).bindPopup("semai dua"),
+			L.marker([0.397780, 108.993168], {icon: semai}).bindPopup("semai tiga")
+		];
+
+		var scPadi = [
+			L.marker([0.510309, 109.148600], {icon: standingCrop}).bindPopup(ketSc + "1"),
+			L.marker([0.502515, 109.166013], {icon: standingCrop}).bindPopup("Standing crop 2"),
+			L.marker([0.382579, 109.168471], {icon: standingCrop}).bindPopup("Standing crop 3"),
+			L.marker([0.374537, 109.200926], {icon: standingCrop}).bindPopup("Standing crop 4")
+		];
+
+		var panenPadi = [
+			L.marker([0.424216, 109.231414], {icon: panen}).bindPopup("panen satu"),
+			L.marker([0.435076, 109.287040], {icon: panen}).bindPopup("panen dua"),
+			L.marker([0.229997, 109.152181], {icon: panen}).bindPopup("panen tiga"),
+			L.marker([0.215298, 109.168483], {icon: panen}).bindPopup("panen empat"),
+			L.marker([0.192768, 109.239114], {icon: panen}).bindPopup("panen lima"),
+			L.marker([0.206135, 109.217648], {icon: panen}).bindPopup("panen enam")
+		];
+
+		var padiLayerPanen = L.layerGroup(),
+		    padiLayerSemai = L.layerGroup(),
+		    padiLayerSc	= L.layerGroup(),
+		    jagungLayerPratanam = L.layerGroup(),
+		    jagungLayerSc = L.layerGroup(),
+		    jagungLayerPanen = L.layerGroup();
+
+	    for(var i = 0; i < semaiPadi.length; i++){L.layerGroup([semaiPadi[i]]).addTo(padiLayerSemai);}
+	    for(var i = 0; i < panenPadi.length; i++){L.layerGroup([panenPadi[i]]).addTo(padiLayerPanen);}
+	    for(var i = 0; i < scPadi.length; i++){L.layerGroup([scPadi[i]]).addTo(padiLayerSc);}
+
+	    for(var i = 0; i < pratanamJagung.length; i++){L.layerGroup([pratanamJagung[i]]).addTo(jagungLayerPratanam);}
+	    for(var i = 0; i < panenJagung.length; i++){L.layerGroup([panenJagung[i]]).addTo(jagungLayerPanen);}
+	    for(var i = 0; i < scJagung.length; i++){L.layerGroup([scJagung[i]]).addTo(jagungLayerSc);}
+
+		var padi = L.layerGroup([padiLayerPanen, padiLayerSemai, padiLayerSc]),
+			jagung = L.layerGroup([jagungLayerPanen, jagungLayerPratanam, jagungLayerSc]);
+
+		var mymap = L.map('mapid', {
+		    center: [0.35, 109.1],
+		    zoom: 10,
+		    layers: [streets, padi]
+		});
+
+		var baseMaps = {
+		    "Grayscale": grayscale,
+		    "Streets": streets,
+		    "Satellite": satellite
+		};
+
+		var komoditas = {
+			"padi" : padi,
+			"jagung" : jagung
+		};
+
+		var overlayMaps = {
+		    "Semai": padiLayerSemai,
+		    "Standing Crop" : padiLayerSc,
+		    "Panen" : padiLayerPanen
+		};
+
+		L.control.layers(komoditas, overlayMaps).addTo(mymap);
+		L.control.layers(baseMaps).addTo(mymap);
+
+		
+
+		
+		function popUp(f,l){
+		    var out = [];
+		    if (f.properties){
+		        for(key in f.properties){
+		            out.push(key+": "+f.properties[key]);
+		        }
+		        l.bindPopup(out.join("<br />"));
+		    }
+		}
+		var jsonTest = new L.GeoJSON.AJAX(["mempawah.geojson"],{onEachFeature:popUp, style: myStyle}).addTo(mymap);
+
 		var popup = L.popup();
 
 		function onMapClick(e) {
@@ -78,4 +182,3 @@ var semai = L.icon({
 		}
 
 		mymap.on('click', onMapClick);
-*/
