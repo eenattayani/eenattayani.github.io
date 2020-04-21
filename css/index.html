@@ -20,17 +20,19 @@
 
 
     <link rel="stylesheet" type="text/css" href="tema.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body onload="pilihKomoditas()">
 	<div class="container">
 		<header>
 			<img src="img/logo.png">
 			<nav>
+				<a href="#" class="nav-group"><i class="fa fa-bars" aria-hidden="true"></i></a>
 				<div class="nav1">
 					<a href="#NEWS"><i class="fa fa-newspaper"></i>&nbsp;Berita</a>
 					<div class="dropdown">
-						<button class="dropbtn"><i class="fas fa-seedling"></i>&nbsp;LTT <i class="fa fa-caret-down"></i></button>
+						<a href="#" class="dropbtn"><i class="fas fa-seedling"></i>&nbsp;LTT&nbsp;<i class="fa fa-caret-down"></i></a>
 						<div class="dropdown-content">
 							<a href="#"><i class="fab fa-envira"></i>&nbsp;Padi</a>
 							<a href="#"><i class="fab fa-envira"></i>&nbsp;Jagung</a>
@@ -49,7 +51,7 @@
 				</div>
 			</nav>	
 			<marquee title="Berita Terkini" behavior="scroll" onmouseover="this.stop()" onmouseout="this.start()" direction="left"><a href="https://berita.com" target="_blank">Tulisan Berjalan Berita Terkini</a></marquee>
-			</header>
+		</header>
 
 		<aside>
 			<iframe src="https://www.youtube.com/embed/YbGl1nMnXng"></iframe>
@@ -63,15 +65,16 @@
 
 		</aside>
 		<main>
+			<div id="mapid"></div>
 			<div class="info-peta">
 				<label id="jenis-komoditas" class="jenis-komoditas">Padi</label><br>
-				<label class="tanggal">Tanggal :&nbsp;<span id="tanggal">04-04-2020</span></label>
+				<label class="tanggal">TANGGAL :&nbsp;<span id="tanggal">04-04-2020</span></label>
 			</div>
 			<div class="option">
 				<label for="komoditas">Pilih Komoditas: </label>
-				<select id="komoditas">
+				<select id="komoditas" onchange="pilihKomoditas()">
 					<option value="jagung">Jagung</option>
-					<option value="padi">Padi</option>
+					<option value="padi" selected>Padi</option>
 					<option value="bawang-merah">Bawang Merah</option>
 					<option value="cabe-besar">Cabe Besar</option>
 					<option value="cabe-rawit">Cabe Rawit</option>
@@ -79,15 +82,15 @@
 			</div>
 			<div class="legenda">
 				<ul>
-					<li><img src="img/semai.png" id="biru">&nbsp;&nbsp;<label for="biru">= Pengolahan Tanah dan Semai</label></li>
-					<li><img src="img/standing-crop.png" id="merah">&nbsp;&nbsp;<label for="merah">= Standing Crop</label></li>
-					<li><img src="img/panen.png" id="hijau">&nbsp;&nbsp;<label for="hijau">= Siap Panen</label></li>
+					<li><img src="img/semai.png" id="merah">&nbsp;&nbsp;<label id="legenda-merah" for="biru">= Pengolahan Tanah dan Semai</label></li>
+					<li><img src="img/standing-crop.png" id="biru">&nbsp;&nbsp;<label id="legenda-biru" for="merah">= Standing Crop</label></li>
+					<li><img src="img/panen.png" id="hijau">&nbsp;&nbsp;<label id="legenda-hijau" for="hijau">= Siap Panen</label></li>
 				</ul>
 			</div>
-			<div id="mapid"></div>
 		</main>
 	</div>
 
 	<script src="app.js"></script>
+	<script src="js.js"></script>
 </body>
 </html>

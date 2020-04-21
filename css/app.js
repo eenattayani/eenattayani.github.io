@@ -134,7 +134,7 @@ var semai = L.icon({
 
 		var mymap = L.map('mapid', {
 		    center: [0.35, 109.1],
-		    zoom: 10,
+		    zoom: 11,
 		    layers: [streets, padi]
 		});
 
@@ -144,19 +144,26 @@ var semai = L.icon({
 		    "Satellite": satellite
 		};
 
-		var komoditas = {
-			"padi" : padi,
-			"jagung" : jagung
-		};
+		var komoditasPadi = {"padi" : padi},
+			komoditasJagung = {"jagung" : jagung};
 
-		var overlayMaps = {
-		    "Semai": padiLayerSemai,
+		var statusPadi = {
+			"Semai": padiLayerSemai,
 		    "Standing Crop" : padiLayerSc,
 		    "Panen" : padiLayerPanen
 		};
 
-		L.control.layers(komoditas, overlayMaps).addTo(mymap);
-		L.control.layers(baseMaps).addTo(mymap);
+		var statusJagung = {
+		    "Pra tanam": jagungLayerPratanam,
+		    "Standing Crop" : jagungLayerSc,
+		    "Panen" : jagungLayerPanen
+		};
+
+		var layerPadi = new L.control.layers(komoditasPadi, statusPadi);
+		var layerJagung = new L.control.layers(komoditasJagung, statusJagung);
+
+		//layerKontrol.addTo(mymap);
+		//L.control.layers(baseMaps).addTo(mymap);
 
 		
 
@@ -182,3 +189,36 @@ var semai = L.icon({
 		}
 
 		mymap.on('click', onMapClick);
+
+//non leaflet.js HTML
+function pilihKomoditas() {
+	var komoditas = document.getElementById("komoditas").value;
+	var jenisKomoditas = document.getElementById("jenis-komoditas");
+	var legendaMerah = document.getElementById("legenda-merah"),
+		legendaBiru = document.getElementById("legenda-biru"),
+		legendaHijau = document.getElementById("legenda-hijau");
+
+
+	jenisKomoditas.innerHTML = komoditas;
+
+	console.log(komoditas);
+
+	if (komoditas == "padi"){
+		layerJagung.remove(mymap);
+		layerPadi.addTo(mymap);
+		
+		legendaMerah.innerHTML = "= Pengolahan Tanah dan Semai";
+
+		console.log("pilih padi");
+	}
+
+	else if(komoditas == "jagung") {
+		layerPadi.remove(mymap);
+		layerJagung.addTo(mymap);
+		
+		legendaMerah.innerHTML = "= Pratanam";
+
+		console.log("pilih jagung");
+	}
+}
+
