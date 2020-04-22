@@ -197,6 +197,13 @@ var semai = L.icon({
 		mymap.on('click', onMapClick);
 
 //non leaflet.js HTML
+function cleanMap() {
+	jagung.remove(mymap);
+	padi.remove(mymap);
+	layerPadi.remove(mymap);
+	layerJagung.remove(mymap);
+}
+
 function pilihKomoditas() {
 	var komoditas = document.getElementById("komoditas").value;
 	var jenisKomoditas = document.getElementById("jenis-komoditas");
@@ -230,14 +237,18 @@ function pilihKomoditas() {
 		padi.remove(mymap);
 
 		layerJagung.addTo(mymap);
-		layerJagung._layerControlInputs[1].checked = true;
-		layerJagung._layerControlInputs[2].checked = true;
-		layerJagung._layerControlInputs[3].checked = true;
+		// layerJagung._layerControlInputs[1].checked = true;
+		// layerJagung._layerControlInputs[2].checked = true;
+		// layerJagung._layerControlInputs[3].checked = true;
 		jagung.addTo(mymap);
 		
 		legendaMerah.innerHTML = "= Pratanam";
 
 		console.log("pilih jagung");
+	}
+
+	else {
+		cleanMap();
 	}
 }
 
