@@ -160,7 +160,13 @@ var semai = L.icon({
 		};
 
 		var layerPadi = new L.control.layers(komoditasPadi, statusPadi);
+			layerPadi.options.collapsed = false;
+
 		var layerJagung = new L.control.layers(komoditasJagung, statusJagung);
+			layerJagung.options.collapsed = false;
+
+
+
 
 		//layerKontrol.addTo(mymap);
 		//L.control.layers(baseMaps).addTo(mymap);
@@ -205,7 +211,14 @@ function pilihKomoditas() {
 
 	if (komoditas == "padi"){
 		layerJagung.remove(mymap);
+		jagung.remove(mymap);
+
 		layerPadi.addTo(mymap);
+		padi.addTo(mymap);
+
+
+
+
 		
 		legendaMerah.innerHTML = "= Pengolahan Tanah dan Semai";
 
@@ -214,7 +227,13 @@ function pilihKomoditas() {
 
 	else if(komoditas == "jagung") {
 		layerPadi.remove(mymap);
+		padi.remove(mymap);
+
 		layerJagung.addTo(mymap);
+		layerJagung._layerControlInputs[1].checked = true;
+		layerJagung._layerControlInputs[2].checked = true;
+		layerJagung._layerControlInputs[3].checked = true;
+		jagung.addTo(mymap);
 		
 		legendaMerah.innerHTML = "= Pratanam";
 

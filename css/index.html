@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto&display=swap" rel="stylesheet">
 
 </head>
-<body onload="pilihKomoditas()">
+<body>
 	<div class="container">
 		<header>
 			<img src="img/logo.png">
@@ -50,7 +50,7 @@
 					<button>&nbsp;<i class="fas fa-search"></i>&nbsp;</button>
 				</div>
 			</nav>	
-			<marquee title="Berita Terkini" behavior="scroll" onmouseover="this.stop()" onmouseout="this.start()" direction="left"><a href="https://berita.com" target="_blank">Tulisan Berjalan Berita Terkini</a></marquee>
+			<marquee title="Berita Terkini" behavior="scroll" direction="left"><a href="https://berita.com" target="_blank">Tulisan Berjalan Berita Terkini</a></marquee>
 		</header>
 
 		<aside>
@@ -72,7 +72,7 @@
 			</div>
 			<div class="option">
 				<label for="komoditas">Pilih Komoditas: </label>
-				<select id="komoditas" onchange="pilihKomoditas()">
+				<select id="komoditas">
 					<option value="jagung">Jagung</option>
 					<option value="padi" selected>Padi</option>
 					<option value="bawang-merah">Bawang Merah</option>
