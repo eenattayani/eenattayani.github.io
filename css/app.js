@@ -55,8 +55,6 @@ var semai = L.icon({
 		    "opacity": 0.65
 		};
 
-		
-
 
 	/*	var geojsonLayer = new L.GeoJSON.AJAX("mempawah.geojson");       
 		geojsonLayer.addTo(mymap);
@@ -129,8 +127,8 @@ var semai = L.icon({
 	    for(var i = 0; i < panenJagung.length; i++){L.layerGroup([panenJagung[i]]).addTo(jagungLayerPanen);}
 	    for(var i = 0; i < scJagung.length; i++){L.layerGroup([scJagung[i]]).addTo(jagungLayerSc);}
 
-		var padi = L.layerGroup([padiLayerPanen, padiLayerSemai, padiLayerSc]),
-			jagung = L.layerGroup([jagungLayerPanen, jagungLayerPratanam, jagungLayerSc]);
+		 var padi = L.layerGroup([padiLayerPanen, padiLayerSemai, padiLayerSc]),
+		 	jagung = L.layerGroup([jagungLayerPanen, jagungLayerPratanam, jagungLayerSc]);
 
 		var mymap = L.map('mapid', {
 		    center: [0.35, 109.1],
@@ -144,27 +142,27 @@ var semai = L.icon({
 		    "Satellite": satellite
 		};
 
-		var komoditasPadi = {"padi" : padi},
-			komoditasJagung = {"jagung" : jagung};
+		// var komoditasPadi = {"padi" : padi},
+		// 	komoditasJagung = {"jagung" : jagung};
 
-		var statusPadi = {
-			"Semai": padiLayerSemai,
-		    "Standing Crop" : padiLayerSc,
-		    "Panen" : padiLayerPanen
-		};
+		// var statusPadi = {
+		// 	"Semai": padiLayerSemai,
+		//     "Standing Crop" : padiLayerSc,
+		//     "Panen" : padiLayerPanen
+		// };
 
-		var statusJagung = {
-		    "Pra tanam": jagungLayerPratanam,
-		    "Standing Crop" : jagungLayerSc,
-		    "Panen" : jagungLayerPanen
-		};
+		// var statusJagung = {
+		//     "Pra tanam": jagungLayerPratanam,
+		//     "Standing Crop" : jagungLayerSc,
+		//     "Panen" : jagungLayerPanen
+		// };
 
-		var layerPadi = new L.control.layers(komoditasPadi, statusPadi);
-			layerPadi.options.collapsed = false;
+		// var layerPadi = new L.control.layers(komoditasPadi, statusPadi);
+		// 	layerPadi.options.collapsed = false;
 
-		var layerJagung = new L.control.layers(komoditasJagung, statusJagung);
-			layerJagung.options.collapsed = false;
-
+		// var layerJagung = new L.control.layers(komoditasJagung, statusJagung);
+		// 	layerJagung.options.collapsed = false;
+// 
 
 
 
@@ -197,58 +195,5 @@ var semai = L.icon({
 		mymap.on('click', onMapClick);
 
 //non leaflet.js HTML
-function cleanMap() {
-	jagung.remove(mymap);
-	padi.remove(mymap);
-	layerPadi.remove(mymap);
-	layerJagung.remove(mymap);
-}
 
-function pilihKomoditas() {
-	var komoditas = document.getElementById("komoditas").value;
-	var jenisKomoditas = document.getElementById("jenis-komoditas");
-	var legendaMerah = document.getElementById("legenda-merah"),
-		legendaBiru = document.getElementById("legenda-biru"),
-		legendaHijau = document.getElementById("legenda-hijau");
-
-
-	jenisKomoditas.innerHTML = komoditas;
-
-	console.log(komoditas);
-
-	if (komoditas == "padi"){
-		layerJagung.remove(mymap);
-		jagung.remove(mymap);
-
-		layerPadi.addTo(mymap);
-		padi.addTo(mymap);
-
-
-
-
-		
-		legendaMerah.innerHTML = "= Pengolahan Tanah dan Semai";
-
-		console.log("pilih padi");
-	}
-
-	else if(komoditas == "jagung") {
-		layerPadi.remove(mymap);
-		padi.remove(mymap);
-
-		layerJagung.addTo(mymap);
-		// layerJagung._layerControlInputs[1].checked = true;
-		// layerJagung._layerControlInputs[2].checked = true;
-		// layerJagung._layerControlInputs[3].checked = true;
-		jagung.addTo(mymap);
-		
-		legendaMerah.innerHTML = "= Pratanam";
-
-		console.log("pilih jagung");
-	}
-
-	else {
-		cleanMap();
-	}
-}
 

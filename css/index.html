@@ -71,14 +71,24 @@
 				<label class="tanggal">TANGGAL :&nbsp;<span id="tanggal">04-04-2020</span></label>
 			</div>
 			<div class="option">
-				<label for="komoditas">Pilih Komoditas: </label>
 				<select id="komoditas">
+					<option value="pilih">-- pilih komoditas --</option>
 					<option value="jagung">Jagung</option>
 					<option value="padi" selected>Padi</option>
 					<option value="bawang-merah">Bawang Merah</option>
 					<option value="cabe-besar">Cabe Besar</option>
 					<option value="cabe-rawit">Cabe Rawit</option>
-				</select>
+				</select><hr>
+				<form class="mark-padi">
+					<input class="padi" type="checkbox" name="padi0" value="padi0"><label for="padi0">semai</label><br>
+					<input class="padi" type="checkbox" name="padi1" value="padi1"><label for="padi1">standing crop</label><br>
+					<input class="padi" type="checkbox" name="padi2" value="padi2"><label for="padi2">siap panen</label><br>
+				</form>
+				<form class="mark-jagung">
+					<input class="jagung" type="checkbox" name="jagung0" value="jagung0"><label class="jagung" for="jagung0">pra tanam</label><br>
+					<input class="jagung" type="checkbox" name="jagung1" value="jagung1"><label class="jagung" for="jagung1">standing crop</label><br>
+					<input class="jagung" type="checkbox" name="jagung2" value="jagung2"><label class="jagung" for="jagung2">siap panen</label>					
+				</form>
 			</div>
 			<div class="legenda">
 				<ul>
