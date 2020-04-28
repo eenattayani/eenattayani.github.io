@@ -118,6 +118,8 @@ function checkPadi() {
 function cleanMap() {
 	jagung.remove(mymap);
 	padi.remove(mymap);
+	markJagung[0].style.display = "none";
+	markPadi[0].style.display = "none";
 }
 
 function pilihKomoditas() {
