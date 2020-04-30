@@ -3,10 +3,11 @@ var bulan = ["jan","feb","mar","apr","mei","jun","jul","agu","sep","okt","nov","
 document.getElementById("tanggal").innerHTML = tanggal.getDate() + " " + bulan[tanggal.getMonth()] + " " + tanggal.getFullYear();
 
 const body = document.querySelector('body');
-
+const line = document.querySelector('.option hr');
 const select = document.querySelector('#komoditas');
-
 const berita = document.querySelector('header marquee');
+const cari = document.querySelector('input[type=search');
+
 
 const markPadi = document.querySelectorAll('[class=mark-padi]');
 const markJagung = document.querySelectorAll('[class=mark-jagung]');
@@ -120,6 +121,8 @@ function cleanMap() {
 	padi.remove(mymap);
 	markJagung[0].style.display = "none";
 	markPadi[0].style.display = "none";
+
+	line.hidden = true;
 }
 
 function pilihKomoditas() {
@@ -140,6 +143,7 @@ function pilihKomoditas() {
 		legendaMerah.innerHTML = "= Pengolahan Tanah dan Semai";
 		markPadi[0].style.display = "inline";
 		markJagung[0].style.display = "none";
+		line.hidden = false;
 
 		checkPadi();
 
@@ -152,6 +156,7 @@ function pilihKomoditas() {
 		legendaMerah.innerHTML = "= Pratanam";
 		markJagung[0].style.display = "inline";
 		markPadi[0].style.display = "none";
+		line.hidden = false;
 
 		checkJagung();
 
