@@ -7,12 +7,10 @@ const line = document.querySelector('.option hr');
 const select = document.querySelector('#komoditas');
 const berita = document.querySelector('header marquee');
 const cari = document.querySelector('input[type=search');
-
+const tombolCari = document.querySelector('header button');
 
 const markPadi = document.querySelectorAll('[class=mark-padi]');
 const markJagung = document.querySelectorAll('[class=mark-jagung]');
-markJagung[0].style.display = "none";
-markPadi[0].style.display = "none";
 
 const padi0 = document.querySelector('input[name=padi0]');
 const padi1 = document.querySelector('input[name=padi1]');
@@ -22,6 +20,14 @@ const jagung0 = document.querySelector('input[name=jagung0]');
 const jagung1 = document.querySelector('input[name=jagung1]');
 const jagung2 = document.querySelector('input[name=jagung2]');
 
+var legendaMerah = document.getElementById("legenda-merah"),
+	legendaBiru = document.getElementById("legenda-biru"),
+	legendaHijau = document.getElementById("legenda-hijau");
+
+
+markJagung[0].style.display = "none";
+markPadi[0].style.display = "none";
+
 body.onload = pilihKomoditas;
 
 select.onchange = pilihKomoditas;
@@ -29,6 +35,26 @@ select.onchange = pilihKomoditas;
 berita.onmouseover = berita.stop;
 berita.onmouseout = berita.start;
 
+
+tombolCari.addEventListener('click', function() {
+	// console.log(`oke ${cari.value}`);
+	if(cari.value == 'padi') {
+		let komoditas = document.getElementById("komoditas");
+		const jenisKomoditas = document.getElementById("jenis-komoditas");
+		komoditas.value = 'padi';
+		jenisKomoditas.innerHTML = komoditas.value;
+		tampilPadi();
+	} else if(cari.value == 'jagung') {
+		let komoditas = document.getElementById("komoditas");
+		komoditas.value = 'jagung';
+		const jenisKomoditas = document.getElementById("jenis-komoditas");
+		jenisKomoditas.innerHTML = komoditas.value;
+		tampilJagung();
+	} else {
+		
+	}
+
+});
 
 padi0.addEventListener('change', function() {
 	if(this.checked) {
@@ -125,42 +151,43 @@ function cleanMap() {
 	line.hidden = true;
 }
 
+function tampilPadi() {
+	jagung.remove(mymap);
+	padi.addTo(mymap);
+	legendaMerah.innerHTML = "= Pengolahan Tanah dan Semai";
+	markPadi[0].style.display = "inline";
+	markJagung[0].style.display = "none";
+	line.hidden = false;
+	checkPadi();
+}
+
+function tampilJagung() {
+	padi.remove(mymap);
+	jagung.addTo(mymap);
+	legendaMerah.innerHTML = "= Pratanam";
+	markJagung[0].style.display = "inline";
+	markPadi[0].style.display = "none";
+	line.hidden = false;
+	checkJagung();
+}
+
 function pilihKomoditas() {
-	var komoditas = document.getElementById("komoditas").value;
-	var jenisKomoditas = document.getElementById("jenis-komoditas");
-	var legendaMerah = document.getElementById("legenda-merah"),
-		legendaBiru = document.getElementById("legenda-biru"),
-		legendaHijau = document.getElementById("legenda-hijau");
-
-
+	const komoditas = document.getElementById("komoditas").value;
+	const jenisKomoditas = document.getElementById("jenis-komoditas");
 	jenisKomoditas.innerHTML = komoditas;
 
 	console.log(komoditas);
 
 	if (komoditas == "padi"){
-		jagung.remove(mymap);
-		padi.addTo(mymap);
-		legendaMerah.innerHTML = "= Pengolahan Tanah dan Semai";
-		markPadi[0].style.display = "inline";
-		markJagung[0].style.display = "none";
-		line.hidden = false;
+		tampilPadi();
 
-		checkPadi();
-
-		console.log("pilih padi");
+		// console.log("pilih padi");
 	}
 
 	else if(komoditas == "jagung") {
-		padi.remove(mymap);
-		jagung.addTo(mymap);
-		legendaMerah.innerHTML = "= Pratanam";
-		markJagung[0].style.display = "inline";
-		markPadi[0].style.display = "none";
-		line.hidden = false;
+		tampilJagung();
 
-		checkJagung();
-
-		console.log("pilih jagung");
+		// console.log("pilih jagung");
 	}
 
 	else {

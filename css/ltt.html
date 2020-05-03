@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <meta http-equiv='refresh' content='3'> -->
+	<title>SIAP Mempawah | Sistem Informasi Data Pertanian Mempawah - BERITA</title>
+	<link rel="shortcut icon" type="icon/x-image" href="img/icon.png"></link>
+	
+
+	<script src="https://use.fontawesome.com/21a51fb9ca.js"></script>
+	<script src="https://kit.fontawesome.com/813cbbbcbe.js" crossorigin="anonymous"></script>
+
+	<!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+    
+    <!-- Leaflet JS -- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="crossorigin=""></script>
+	<script src="leaflet.ajax.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="tema.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Teko&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<div class="container">
+		<header>
+			<img src="img/logo.png">
+			<nav>
+				<a href="#" class="nav-group"><i class="fa fa-bars" aria-hidden="true"></i></a>
+				<div class="nav1">
+					<a href="#NEWS"><i class="fa fa-newspaper"></i>&nbsp;Berita</a>
+					<div class="dropdown">
+						<a href="#" class="dropbtn"><i class="fas fa-seedling"></i>&nbsp;LTT&nbsp;<i class="fa fa-caret-down"></i></a>
+						<div class="dropdown-content">
+							<a href="#"><i class="fab fa-envira"></i>&nbsp;Padi</a>
+							<a href="#"><i class="fab fa-envira"></i>&nbsp;Jagung</a>
+							<a href="#"><i class="fab fa-envira"></i>&nbsp;Bawang Merah</a>
+							<a href="#"><i class="fas fa-pepper-hot"></i>&nbsp;Cabe Besar</a>
+							<a href="#"><i class="fas fa-pepper-hot"></i>&nbsp;Cabe Rawit</a>
+						</div>
+					</div>
+					<a href="#DATA"><i class="fa fa-database" aria-hidden="true"></i>&nbsp;Data</a>
+					<a href="#INFO"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Info Pasar</a>
+					<a href="#DOWNLOAD"><i class="fa fa-download"></i>&nbsp;Download</a>
+				</div>
+				<div class="nav2">
+					<input type="search" name="cari" placeholder="Search">
+					<button>&nbsp;<i class="fas fa-search"></i>&nbsp;</button>
+				</div>
+			</nav>	
+			<marquee title="Berita Terkini" behavior="scroll" direction="left">
+				<a href="https://berita.com" target="_blank">Tulisan Berjalan Berita Terkini</a>
+				<a href="#"></a>
+			</marquee>
+		</header>
+		<main>
+			<div class="container-ltt">
+				
+			</div>
+		</main>
+	</div>
+
+	<script src="app.js"></script>
+	<script src="js.js"></script>
+</body>
+</html>

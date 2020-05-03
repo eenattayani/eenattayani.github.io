@@ -21,12 +21,12 @@ time, mark, audio, video {
 
 body {
 	font-family: arial, calibri, verdana;
-	background-color: red;
+	background-color: #bbb;
 	width: 100%;
 }
 
 .container {
-	width: inherit;
+	width: 100%;
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -36,21 +36,18 @@ body {
 	display: grid;
 	grid-template-areas: "header header "
 							"main aside";
-	grid-template-columns: auto 300px;
+	grid-template-columns: 75% 25%;
 	grid-template-rows: 175px auto;
 	grid-gap: 0px;			
 }
 
 main {
-	bottom: 0;
 	width: 100%;
-	margin-top: 0px;
+	min-height: 400px;
 	grid-area: main;
 	background-color: unset;
 	box-sizing: border-box;
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	position: relative;
 	font-family: 'Roboto', sans-serif;
 }
@@ -66,10 +63,12 @@ main {
 
 #mapid {
 	width: 100%;
-	height: 100%;
-	margin-top: 0px;
+	min-height: 400px;
 	position: absolute;
 	z-index: 0;
+	overflow: hidden;
+	top: 0;
+	bottom: 0;
 }
 
 main .option {
@@ -202,6 +201,7 @@ nav .nav1 {
 	order: 1;
 	background-color: inherit;
 	height: 45px;
+	flex-basis: 250px;
 }
 
 .nav-group {
@@ -217,9 +217,9 @@ nav .nav2 {
 }
 
 .nav2 input{
-	color: #ccc;
+	color: #333;
 	border-radius: 4px;
-	padding: 7px 40px 7px 5px;
+	padding: 7px 10px 7px 10px;
 	text-decoration: none;
 	font-size: 14px;
 }
@@ -313,11 +313,13 @@ nav a:hover, .dropdown:hover .dropbtn {
 
 aside {
 	grid-area: aside;
-	background-color: #333;
-	padding: 10px 1px;
+	background-color: #bbb;
+	padding: 10px 10px;
 	display: block;
 	position: static;
 	text-align: center;
+	min-height: 400px;
+	bottom: 0;
 }
 
 aside iframe {
@@ -329,8 +331,9 @@ aside iframe {
 }
 
 aside a {
-	color: #fff;
+	color: #333;
 	text-decoration: none;
+	font-weight: 600;
 }
 
 
@@ -341,6 +344,73 @@ footer {
 	padding: 10px 0px;
 }
 
+
+/*Halaman Berita*/
+
+main .container-berita {
+	display: block;
+	padding: 10px 10px;
+	width: 100%;
+	min-height: 600px;
+}
+
+main .container-berita .baris {
+	width: 500px;
+	background-color: unset;
+	display: flex;
+	width: 100%;
+}
+
+main .container-berita .baris .kolom {
+	
+}
+
+main .container-berita .baris .gambar {
+	background-color: inherit;
+	padding: 15px 20px;
+	width: 30%;
+	overflow: hidden;
+}
+
+main .container-berita .baris .berita {
+	background-color: inherit;	
+	padding: 10px;
+	min-height: 200px;
+	width: 70%;
+}
+
+main .container-berita h2 {
+	font-weight: 600;
+	font-size: 24px;
+	font-style: italic;
+}
+
+main .container-berita img {
+	height: 100%;
+	width: 100%;
+	border-radius: 10px;
+	border: 5px solid #777;
+    box-sizing: border-box;
+
+
+}
+
+span.lanjut-baca {
+	font-weight: 600;
+	font-style: italic;
+	cursor: pointer;
+}
+
+/*Halaman LTT*/
+.container-ltt {
+	margin: 10px 10px;
+	background-color: #eee;
+	width: 100%;
+	height: 100px;
+}
+
+
+/*Responsive*/
 
 @media (max-width: 768px) {
 	.container header img {
@@ -354,7 +424,7 @@ footer {
 							 "main"
 							 "aside";
 		grid-template-columns: auto;
-		grid-template-rows: 151px 600px 200px;
+		grid-template-rows: 151px auto auto;
 		grid-gap: 0px;	
 		bottom: unset;		
 	}
